@@ -17,7 +17,13 @@ make test
 ```
 make mount
 flow.tcl -design designs/picorv32a
+```
+
+Exit the docker and
+
+```
 sudo apt install klayout
 cd designs/picorv32a/runs/RUN.../results
+cd routing
 klayout *.def
 ```
