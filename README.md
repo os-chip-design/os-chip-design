@@ -27,3 +27,7 @@ cd designs/picorv32a/runs/RUN.../results
 cd routing
 klayout *.def
 ```
+
+## Notes
+
+https://docs.google.com/document/d/1B4SUZ5X-Ca8k_reIMNJzn70KjauhOAQU3Uh72D38uhM/edit?usp=sharing
