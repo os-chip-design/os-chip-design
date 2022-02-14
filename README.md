@@ -36,3 +36,7 @@ https://docs.google.com/document/d/1B4SUZ5X-Ca8k_reIMNJzn70KjauhOAQU3Uh72D38uhM/
 
 https://github.com/efabless/caravel
 
+## Random Tasks
+
+ * Patmos has a large memory footprint. A naked compilation configuration would be good (similar to bootable)
+
