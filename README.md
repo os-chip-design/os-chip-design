@@ -36,26 +36,27 @@ https://docs.google.com/document/d/1B4SUZ5X-Ca8k_reIMNJzn70KjauhOAQU3Uh72D38uhM/
 
 ## Links
 
+
+
+### Machine setup for Caravel
+
+Caravel is the environment that we need to use for the Skywater chip.
+
 https://github.com/efabless/caravel
 
 https://github.com/efabless/caravel_user_project/blob/main/docs/source/roundtrip.rst
 
 https://github.com/efabless/caravel_board
 
-### Machine setup for Caravel
 
-
-#### Notes
+#### Additional Installation Notes
 
  * ```sudo apt install tcsh csh tcl-dev tk-dev libcairo2-dev```
  * Install magic from source
- * When ```make pdk``` fails, remove and try again
+ * Do NOT set the ```PDK_ROOT``` and ```OPENLANE_ROOT``` to a folder *within* Caravel
  * ```sudo chmod 666 /var/run/docker.sock``` if error
+ * When ```make pdk``` fails, remove and try again
 
-#### If restart:
-
- * Is this fails, start over with Ubuntu 21.10
- * uid: oschip, pwd: oschip
 
 ## Random Tasks
 
