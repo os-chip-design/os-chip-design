@@ -4,6 +4,8 @@ This is a special course running at DTU in spring semester 2022.
 
 ## Commands to get Started
 
+Make sure that Python3 is default and in a later version (3.6 or 3.8 for Caravel)
+
 ```
 git clone https://github.com/The-OpenROAD-Project/OpenLane.git
 cd OpenLane/
@@ -39,6 +41,21 @@ https://github.com/efabless/caravel
 https://github.com/efabless/caravel_user_project/blob/main/docs/source/roundtrip.rst
 
 https://github.com/efabless/caravel_board
+
+### Machine setup for Caravel
+
+
+#### Notes
+
+ * ```sudo apt install tcsh csh tcl-dev tk-dev libcairo2-dev```
+ * Install magic from source
+ * When ```make pdk``` fails, remove and try again
+ * ```sudo chmod 666 /var/run/docker.sock``` if error
+
+#### If restart:
+
+ * Is this fails, start over with Ubuntu 21.10
+ * uid: oschip, pwd: oschip
 
 ## Random Tasks
 
