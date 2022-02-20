@@ -44,18 +44,20 @@ Caravel is the environment that we need to use for the Skywater chip.
 
 https://github.com/efabless/caravel
 
-https://github.com/efabless/caravel_user_project/blob/main/docs/source/roundtrip.rst
-
 https://github.com/efabless/caravel_board
 
+Installation instructions:
+https://github.com/efabless/caravel_user_project/blob/main/docs/source/roundtrip.rst
 
 #### Additional Installation Notes
 
  * ```sudo apt install tcsh csh tcl-dev tk-dev libcairo2-dev```
- * Install magic from source
+ * Install magic from source (https://github.com/RTimothyEdwards/magic)
  * Do NOT set the ```PDK_ROOT``` and ```OPENLANE_ROOT``` to a folder *within* Caravel
  * ```sudo chmod 666 /var/run/docker.sock``` if error
  * When ```make pdk``` fails, remove and try again
+ * In step 1, there can be merge issues with git if the repo is created with a README. (A README can be created later)
+ * If ```make precheck``` fails with *GOLDEN_CARAVEL envrionment variable is not set. Please set it to point to absolute path to the golden caravel*, change ```CARAVEL_ROOT``` to ```GOLDEN_CARAVEL``` in *mpw_precheck.py*
 
 
 ## Random Tasks
