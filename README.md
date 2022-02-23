@@ -63,4 +63,5 @@ https://github.com/efabless/caravel_user_project/blob/main/docs/source/roundtrip
 ## Random Tasks
 
  * Patmos has a large memory footprint. A naked compilation configuration would be good (similar to bootable)
+ * Initialization of the PC has strange usage of !reset and input pins, because of Chisel 3 changes for Verilator. We also want to set the PC. Maybe we fine one common (better) solution.
 
