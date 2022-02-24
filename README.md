@@ -6,6 +6,8 @@ This is a special course running at DTU in spring semester 2022.
 
 Make sure that Python3 is default and in a later version (3.6 or 3.8 for Caravel)
 
+Also make sure you have Docker: (if not, instructions for install: https://docs.docker.com/engine/install/ubuntu/)
+
 ```
 git clone https://github.com/The-OpenROAD-Project/OpenLane.git
 cd OpenLane/
@@ -58,6 +60,16 @@ https://github.com/efabless/caravel_user_project/blob/main/docs/source/roundtrip
  * When ```make pdk``` fails, remove and try again
  * In step 1, there can be merge issues with git if the repo is created with a README. (A README can be created later)
  * If ```make precheck``` fails with *GOLDEN_CARAVEL envrionment variable is not set. Please set it to point to absolute path to the golden caravel*, change ```CARAVEL_ROOT``` to ```GOLDEN_CARAVEL``` in *mpw_precheck.py*
+
+### Setup for OpenROAD
+
+Instructions for setting up OpenROAD are found here:
+
+https://github.com/The-OpenROAD-Project/OpenROAD#openroad
+
+**OBS!** If your distro isn't Ubuntu 20.04 or Centos7, then instructions for installing dependencies are found here:
+
+https://github.com/chiselverify/os-chip-design/blob/main/OpenROAD_Dependencies.md
 
 
 ## Random Tasks
