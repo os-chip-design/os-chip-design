@@ -1,6 +1,8 @@
 ## OpenROAD Dependencies 
 (if the *DependencyInstaller.sh* doesn't support your linux distro)
 
+But needed if on Ubuntu 20.04 (and some other distros)
+
 #### Programs that can be installed by apt
 ```
 sudo apt -y install \
