@@ -48,8 +48,9 @@ https://github.com/efabless/caravel
 
 https://github.com/efabless/caravel_board
 
-Installation instructions:
-https://github.com/efabless/caravel_user_project/blob/main/docs/source/roundtrip.rst
+Instructions for setting up caravel user project:
+
+https://github.com/efabless/caravel_user_project/blob/main/docs/source/quickstart.rst
 
 #### Additional Installation Notes
 
