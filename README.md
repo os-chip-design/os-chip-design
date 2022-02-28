@@ -39,6 +39,7 @@ https://docs.google.com/document/d/1B4SUZ5X-Ca8k_reIMNJzn70KjauhOAQU3Uh72D38uhM/
 ## Links
 
 https://symbiflow-examples.readthedocs.io/en/latest/
+A refernce to an SPI Flash model: https://github.com/pulp-platform/pulp/tree/master/rtl/vip/spi_flash
 
 ### Machine setup for Caravel
 
