@@ -78,3 +78,8 @@ https://github.com/chiselverify/os-chip-design/blob/main/OpenROAD_Dependencies.m
  * Patmos has a large memory footprint. A naked compilation configuration would be good (similar to bootable)
  * Initialization of the PC has strange usage of !reset and input pins, because of Chisel 3 changes for Verilator. We also want to set the PC. Maybe we fine one common (better) solution.
 
+## Ideas for Additional Cricuits
+
+ * sigma-delta ADC/DAC
+ * asynchronous circuit in Chisel as Patmos peripheral
+
