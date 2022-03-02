@@ -65,6 +65,7 @@ https://github.com/efabless/caravel_user_project/blob/main/docs/source/quickstar
  * If ```make precheck``` fails with *GOLDEN_CARAVEL envrionment variable is not set. Please set it to point to absolute path to the golden caravel*, change ```CARAVEL_ROOT``` to ```GOLDEN_CARAVEL``` in *mpw_precheck.py*
 
 For the submission to the MPW run we need to use the branch, see https://docs.google.com/document/d/1Y7LuP_0dJ_vmD8G_Twc6qc97fj7aW5pRV5nAjN2oOUk/edit#
+Latest version is ```mpw-5c```
 
 ### Setup for OpenROAD
 
