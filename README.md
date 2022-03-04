@@ -78,6 +78,10 @@ https://github.com/The-OpenROAD-Project/OpenROAD#openroad
 https://github.com/chiselverify/os-chip-design/blob/main/OpenROAD_Dependencies.md
 
 
+### Architecture
+
+![Alt text](patmos.drawio.svg?raw=true)
+
 ## Random Tasks
 
  * Patmos has a large memory footprint. A naked compilation configuration would be good (similar to bootable)
