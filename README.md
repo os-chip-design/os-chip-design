@@ -2,39 +2,15 @@
 
 This is a special course running at DTU in spring semester 2022.
 
+## Meeting Notes
+
+https://docs.google.com/document/d/1B4SUZ5X-Ca8k_reIMNJzn70KjauhOAQU3Uh72D38uhM/edit?usp=sharing
+
 ## Commands to get Started
 
 Make sure that Python3 is default and in a later version (3.6 or 3.8 for Caravel)
 
-Also make sure you have Docker: (if not, instructions for install: https://docs.docker.com/engine/install/ubuntu/)
-
-```
-git clone https://github.com/The-OpenROAD-Project/OpenLane.git
-cd OpenLane/
-make pull-openlane
-make pdk
-make test
-```
-
-### Build Something in Openlane
-
-```
-make mount
-flow.tcl -design designs/picorv32a
-```
-
-Exit the docker and
-
-```
-sudo apt install klayout
-cd designs/picorv32a/runs/RUN.../results
-cd routing
-klayout *.def
-```
-
-## Notes
-
-https://docs.google.com/document/d/1B4SUZ5X-Ca8k_reIMNJzn70KjauhOAQU3Uh72D38uhM/edit?usp=sharing
+Also make sure you have Docker installed: (if not, instructions for install: https://docs.docker.com/engine/install/ubuntu/)
 
 ## Links
 
@@ -77,6 +53,33 @@ https://github.com/The-OpenROAD-Project/OpenROAD#openroad
 
 https://github.com/chiselverify/os-chip-design/blob/main/OpenROAD_Dependencies.md
 
+### Setup fo OpenLane
+
+We are not directly using it, but as part of Caravel. So thi might be a bit outdated.
+
+```
+git clone https://github.com/The-OpenROAD-Project/OpenLane.git
+cd OpenLane/
+make pull-openlane
+make pdk
+make test
+```
+
+### Build Something in Openlane
+
+```
+make mount
+flow.tcl -design designs/picorv32a
+```
+
+Exit the docker and
+
+```
+sudo apt install klayout
+cd designs/picorv32a/runs/RUN.../results
+cd routing
+klayout *.def
+```
 
 ### Architecture
 
