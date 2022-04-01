@@ -1,0 +1,213 @@
+\documentclass[conference]{IEEEtran}
+
+
+\usepackage{cite}
+\usepackage{pslatex} % -- times instead of computer modern, especially for the plain article class
+\usepackage[colorlinks=false,bookmarks=false]{hyperref}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{listings}
+%\usepackage{flushend} % even out the last page, but use only at the end when there is a bibliography
+%\usepackage{minted}		% For inserting code
+%\setminted[systemverilog]{
+%	tabsize=3
+%}
+%\setminted[C]{
+%	tabsize=3,
+%	breaklines
+%}
+%\setminted[scala]{
+%	tabsize=3,
+%	breaklines
+%}
+\usepackage{xspace}		% For using \SV with trailing spaces
+\usepackage{cleveref}	% Needed for correctly referencing listings
+\usepackage{subfig}
+
+\newcommand{\code}[1]{{\small{\texttt{#1}}}}
+\newcommand{\SV}{SystemVerilog\xspace}
+
+
+% fatter TT font
+\renewcommand*\ttdefault{txtt}
+% another TT, suggested by Alex
+% \usepackage{inconsolata}
+% \usepackage[T1]{fontenc} % needed as well?
+
+%\newcommand{\todo}[1]{{\emph{TODO: #1}}}
+\newcommand{\todo}[1]{{\color{olive} TODO: #1}}
+\newcommand{\martin}[1]{{\color{blue} Martin: #1}}
+\newcommand{\simon}[1]{{\color{green} Simon: #1}}
+\newcommand{\abcdef}[1]{{\color{red} Author2: #1}}
+\newcommand{\rewrite}[1]{{\color{red} rewrite: #1}}
+\newcommand{\ducky}[1]{{\color{orange} Richard: #1}}
+\newcommand{\kasper}[1]{{\color{purple} Kasper: #1}}
+\newcommand{\hjd}[1]{{\color{pink} Hans: #1}}
+
+% uncomment following for final submission
+%\renewcommand{\todo}[1]{}
+%\renewcommand{\martin}[1]{}
+%\renewcommand{\simon}[1]{}
+%\renewcommand{\kasper}[1]{}
+%\renewcommand{\ducky}[1]{}
+
+
+
+%%% ZF
+\usepackage{listings}
+\lstset{
+	columns=fullflexible,
+	%        basicstyle=\ttfamily\footnotesize,
+	basicstyle=\ttfamily\small,      
+	%columns=fullflexible, keepspaces=true,
+	numbers=left,    
+	numberblanklines=false,
+	captionpos=b,
+	%	breaklines=true,
+	escapeinside={@}{@},
+	numbersep=5pt,
+	language=C,
+	tabsize=2,
+	breakatwhitespace=true,
+	breaklines=true,
+	deletekeywords={for},
+	%        keywordstyle=\ttfamily
+	numbersep=5pt,
+	xleftmargin=.10in,
+	%xrightmargin=.25in
+}
+
+\newcommand{\longlist}[3]{{\lstinputlisting[float, caption={#2}, label={#3}, frame=tb, captionpos=b]{#1}}}
+
+\title{Open-Source Chip Design}
+
+%\author{
+%\IEEEauthorblockN{No Author Given}
+%\IEEEauthorblockA{No Institute Given}
+%}
+
+\author{\IEEEauthorblockN{XXX YYY\IEEEauthorrefmark{1}, \\
+%Christa Skytte Jensen <christa@jensen.cc>
+%Syed Anas Alam <s194016@student.dtu.dk>
+%Nicolai BŸlow <nixen.dyre@gmail.com>
+%Karl Herman Krause <s203852@student.dtu.dk>
+%Andreas Alkj¾r Eriksen <s203866@student.dtu.dk>
+%Mads Rumle Nordstr¿m <s200621@student.dtu.dk>
+%Jakob Furbo Enevoldsen <s184074@student.dtu.dk>
+%Niels William Hartmann <s203884@student.dtu.dk>
+%Simon Winther Rasmussen <s203842@student.dtu.dk>
+%Ulrik Helk <s203826@student.dtu.dk>
+%Jonas Ingerslev S¿rensen <s193274@student.dtu.dk>
+%Tjark Petersen <s186083@student.dtu.dk>
+%J¿rgen Kragh Jakobsen <jkj@myrun.dk>
+%Luca Pezzarossa <lpez@dtu.dk>
+\\
+xxx yyy\IEEEauthorrefmark{1}, zzz yyy\IEEEauthorrefmark{1}}\\
+\IEEEauthorblockA{\IEEEauthorrefmark{1}\textit{Department of Applied Mathematics and Computer Science} \\
+\textit{Technical University of Denmark}\\
+Lyngby, Denmark \\\\
+XXX, xxx@dtu..dk}
+}
+
+
+\begin{document}
+
+%\IEEEoverridecommandlockouts
+%\IEEEpubid{\makebox[\columnwidth]{xxx-\$31.00~\copyright2021 IEEE \hfill} \hspace{\columnsep}\makebox[\columnwidth]{ }}
+
+\maketitle
+
+\IEEEpubidadjcol
+
+%\thispagestyle{empty}
+\pagestyle{empty}
+
+\begin{abstract}
+Chip design is usually a high-effort, high-cost, and high-risk process. However, recently Google took the lead to
+bring back chip design to a level where many engineers and student can participate, even enabling it for students.
+In this paper we report from a course at the Technical University of Denmark where a group of students where able
+to design and build a chip with the help of open-source tools and the SkyWater process.
+\end{abstract}
+
+
+\begin{IEEEkeywords}
+digital design, verification, Chisel, Scala
+\end{IEEEkeywords}
+
+%\section{TODO}
+%
+%\begin{itemize}
+%\item REVIEW 1: Re-write abstract and introduction - remove anything not related to verification. Remove negative wording on Verilog and VHDL. Re-consider necessity of section III.A and Fig. 2. Need for a more advanced use case.
+%\item REVIEW 2: Include ChiselTest and ChiselVerify in Fig. 1. Re-write sections 4, 5 and 6, and ensure close connection to introduction. Add a few words on ChiselVerify as an agile development tool. Need for a more advanced use case (with comparison to UVM). Remove filler sentences.
+%\item REVIEW 3: Prove claimed productivity increase.
+%\item REVIEW 4: Need for a more advanced use case.
+%\item REVIEW 5: Prove claimed productivity increase. Add table of available methods (section III).
+%\end{itemize}
+
+\section{Introduction}
+\label{sec:introduction}
+
+\emph{What this is about}
+
+\todo{We aim for NorCAS. This is a 6 pages paper.}
+
+\section{The Patmos Project}
+
+\todo{Background info on the Patmos project that we use here. Martin shall write here.}
+
+\section{The Tool Chain}
+
+\todo{Background info on yosys,Google/SkyWater/efabless and other stuff}
+
+\section{Booting Patmos}
+
+The standard configuration of Patmos contains a Boot ROM that contains a program that downloads the real
+program via a serial port. However, with the combination of the RISC-V processor we need to find a different way
+to boot Patmos. %\martin{BTW, what is the argument here?}
+
+
+\section{Hardware Design}
+
+Although the Patmos/T-CREST project is a mature project that has been ported to many FPGA
+boards, integrating it into the Caravel chip design flow created several challenges.
+
+\subsection{External Memory}
+
+The chip and PCB provided by the Caravel project makes only 38 \todo{check the number} pins available
+for the project. This restriction makes it impossible to use standard SRAM or Flash devices. Therefore,
+we needed to find a solution for external memories with a low pin count.
+
+\todo{describe SPI RAM and Flash devices and the interface}
+
+\subsection{Memory Compiler}
+
+
+\subsection{Other}
+
+Placeholder for better titles.
+
+
+\subsection{xxx}
+\subsection{xxx}
+
+\section{Using Caravel}
+
+\martin{This is probably not the right heading.}
+
+\subsection{xxx}
+\subsection{xxx}
+
+\section{Results}
+
+\martin{Will we have results?}
+
+\section{Discussion}
+
+\martin{As we do not have any chip results, we have a discussion section. However, we still can provide results
+related to the process of doing a chip in an OS design flow.}
+
+\section{Conclusion}
+\end{document}
