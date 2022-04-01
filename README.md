@@ -90,6 +90,10 @@ klayout *.def
  * Patmos has a large memory footprint. A naked compilation configuration would be good (similar to bootable)
  * Initialization of the PC has strange usage of !reset and input pins, because of Chisel 3 changes for Verilator. We also want to set the PC. Maybe we fine one common (better) solution.
 
+## Memory chip used
+https://www.mouser.dk/datasheet/2/1127/APM_PSRAM_QSPI_APS1604M_3SQR_v2_7_PKG-1954896.pdf
+
+
 ## Ideas for Additional Cricuits
 
  * sigma-delta ADC/DAC
