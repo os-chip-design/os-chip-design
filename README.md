@@ -85,6 +85,13 @@ klayout *.def
 
 ![Alt text](patmos.drawio.svg?raw=true)
 
+### OpenRAM
+```
+export OPENRAM_HOME=/home/shared/OpenRAM/compiler
+export OPENRAM_TECH=/home/shared/OpenRAM/technology
+export PDK_ROOT=/home/shared/pdks
+```
+
 ## Random Tasks
 
  * Patmos has a large memory footprint. A naked compilation configuration would be good (similar to bootable)
