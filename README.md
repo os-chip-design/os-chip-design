@@ -33,6 +33,8 @@ https://github.com/efabless/caravel_user_project/blob/main/docs/source/quickstar
 #### Additional Installation Notes
 
  * ```sudo apt install tcsh csh tcl-dev tk-dev libcairo2-dev```
+ * ```sudo apt install python3-pip```
+ * make sure that ```~/.local/bin``` is in your path (logout/login during the build process when the error occurs should do it)
  * Install magic from source (https://github.com/RTimothyEdwards/magic)
  * Do NOT set the ```PDK_ROOT``` and ```OPENLANE_ROOT``` to a folder *within* Caravel
  * If docker.sock permission denied use:```sudo usermod -a -G docker USER # Replace USER with your user``` (restart is required) 
@@ -41,7 +43,7 @@ https://github.com/efabless/caravel_user_project/blob/main/docs/source/quickstar
  * If ```make precheck``` fails with *GOLDEN_CARAVEL envrionment variable is not set. Please set it to point to absolute path to the golden caravel*, change ```CARAVEL_ROOT``` to ```GOLDEN_CARAVEL``` in *mpw_precheck.py*
 
 For the submission to the MPW run we need to use the branch, see https://docs.google.com/document/d/1Y7LuP_0dJ_vmD8G_Twc6qc97fj7aW5pRV5nAjN2oOUk/edit#
-Latest version is ```mpw-5c```
+Latest version is ```mpw-6b``` (a tag, not a branch)
 
 ### Setup for OpenROAD
 
@@ -55,7 +57,7 @@ https://github.com/chiselverify/os-chip-design/blob/main/OpenROAD_Dependencies.m
 
 ### Setup fo OpenLane
 
-We are not directly using it, but as part of Caravel. So thi might be a bit outdated.
+We are not directly using it, but as part of Caravel. So this might be a bit outdated.
 
 ```
 git clone https://github.com/The-OpenROAD-Project/OpenLane.git
