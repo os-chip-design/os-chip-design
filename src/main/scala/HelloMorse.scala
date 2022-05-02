@@ -3,9 +3,12 @@ import chisel3._
 class HelloMorse(freq: Int) extends Module {
   val io = IO(new Bundle() {
     val led = Output(UInt(1.W))
+    val audio = Output(UInt(1.W))
+    val gain = Output(UInt(1.W))
+    val nshutdown = Output(UInt(1.W))
   })
 
-  val DitMs = 150
+  val DitMs = 110
   val Cnt = (freq / (1000 / DitMs) - 1).U
 
   val code = Map(
@@ -53,7 +56,7 @@ class HelloMorse(freq: Int) extends Module {
   def toBits(c: Char) = c match {
     case '.' => List(1, 0)
     case '-' => List(1, 1, 1, 0)
-    case ',' => List(0, 0)
+    case ',' => List(0, 0, 0) // one more then spec, for easier hearing on faster pace
     case ' ' => List(0, 0, 0, 0)
     case _ => println(c); List(123)
   }
@@ -81,11 +84,33 @@ class HelloMorse(freq: Int) extends Module {
     regs(sl.length-1) := regs(0)
   }
 
+  // generating some sound
+  // Need to make it asymetric, as it is too loud with the Pmod AMP2
+  val Div = freq / 1000
+  val Fac = 500
+  val DivA = (Div / Fac).U
+  val DivB = (Div * (Fac -1) / Fac).U
+  val audioCntReg = RegInit(DivA)
+  val toggleTick = audioCntReg === 0.U
+  val toggleReg = RegInit(0.U)
+  audioCntReg := audioCntReg - 1.U
+  when (toggleTick) {
+    when (toggleReg === 0.U) {
+      audioCntReg := DivA
+    } .otherwise {
+      audioCntReg := DivB
+    }
+    toggleReg := ~toggleReg
+  }
 
+  io.gain := 0.U
+  io.nshutdown := 1.U
+  io.audio := toggleReg & regs(0)
   io.led := regs(0)
 }
 
 object HelloMorse extends App {
-  // It is 10 MHz for the chip (100 MHz the Basys3)
-  emitVerilog(new HelloMorse(10000000))
+  // It is 10 MHz for the chip, but 100 MHz for the Basys 3 board
+  val Basys3 = true
+  emitVerilog(new HelloMorse(if (Basys3) 100000000 else 10000000))
 }
