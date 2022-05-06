@@ -45,6 +45,12 @@ https://github.com/efabless/caravel_user_project/blob/main/docs/source/quickstar
 For the submission to the MPW run we need to use the branch, see https://docs.google.com/document/d/1Y7LuP_0dJ_vmD8G_Twc6qc97fj7aW5pRV5nAjN2oOUk/edit#
 Latest version is ```mpw-6b``` (a tag, not a branch)
 
+#### Fixes for caravel flow fails
+
+If detail routing fails on the optimization step without any helpful error message, check the usage of RAM and swap. It is likely the flow has stopped because it needs more memory. 
+
+If the flow fails due to ROUTING CONGESTION, set a lowervalue of ```PL_TARGET_DENSITY```
+
 ### Setup for OpenROAD
 
 Instructions for setting up OpenROAD are found here:
