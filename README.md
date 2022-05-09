@@ -34,6 +34,7 @@ https://github.com/efabless/caravel_user_project/blob/main/docs/source/quickstar
 
  * ```sudo apt install tcsh csh tcl-dev tk-dev libcairo2-dev```
  * ```sudo apt install python3-pip```
+ * ```python3 -m pip install --upgrade --no-cache-dir volare```
  * make sure that ```~/.local/bin``` is in your path (logout/login during the build process when the error occurs should do it)
  * Install magic from source (https://github.com/RTimothyEdwards/magic)
  * Do NOT set the ```PDK_ROOT``` and ```OPENLANE_ROOT``` to a folder *within* Caravel
