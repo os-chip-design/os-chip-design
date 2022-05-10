@@ -2,6 +2,8 @@
 
 This is a special course running at DTU in spring semester 2022.
 
+Article on this course: https://www.compute.dtu.dk/english/news/nyhed?id=ed010284-154f-43a3-a352-6dce97eaf72c
+
 ## Meeting Notes
 
 https://docs.google.com/document/d/1B4SUZ5X-Ca8k_reIMNJzn70KjauhOAQU3Uh72D38uhM/edit?usp=sharing
