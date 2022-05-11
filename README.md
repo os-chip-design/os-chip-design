@@ -120,5 +120,6 @@ Memory chip used: https://www.mouser.dk/datasheet/2/1127/APM_PSRAM_QSPI_APS1604M
 ## Submission
 
  * Checklist at https://github.com/efabless/caravel_user_project/blob/main/docs/source/index.rst#checklist-for-open-mpw-submission
-   * But the README misses ```make setup```
+   * But the README there misses ```make setup```
  * Patmos frequency setting
+ * Change project README
