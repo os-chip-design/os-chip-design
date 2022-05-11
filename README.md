@@ -14,12 +14,6 @@ Make sure that Python3 is default and in a later version (3.6 or 3.8 for Caravel
 
 Also make sure you have Docker installed: (if not, instructions for install: https://docs.docker.com/engine/install/ubuntu/)
 
-## Links
-
-https://symbiflow-examples.readthedocs.io/en/latest/
-
-A reference to an SPI Flash model (implementations of many IO devices are in their own repos): https://github.com/pulp-platform/pulp/tree/master/rtl/vip/spi_flash
-
 ### Machine setup for Caravel
 
 Caravel is the environment that we need to use for the Skywater chip.
@@ -108,12 +102,18 @@ export PDK_ROOT=/home/shared/pdks
  * Patmos has a large memory footprint. A naked compilation configuration would be good (similar to bootable)
  * Initialization of the PC has strange usage of !reset and input pins, because of Chisel 3 changes for Verilator. We also want to set the PC. Maybe we fine one common (better) solution.
 
-## Memory chip used
-https://www.mouser.dk/datasheet/2/1127/APM_PSRAM_QSPI_APS1604M_3SQR_v2_7_PKG-1954896.pdf
+## Links
+
+FPGA synthesis: https://symbiflow-examples.readthedocs.io/en/latest/
+
+A reference to an SPI Flash model (implementations of many IO devices are in their own repos): https://github.com/pulp-platform/pulp/tree/master/rtl/vip/spi_flash
+
+Memory chip used: https://www.mouser.dk/datasheet/2/1127/APM_PSRAM_QSPI_APS1604M_3SQR_v2_7_PKG-1954896.pdf
 
 
 ## Ideas for Additional Cricuits
 
  * sigma-delta ADC/DAC
  * asynchronous circuit in Chisel as Patmos peripheral
+ * Some HW Hello World
 
