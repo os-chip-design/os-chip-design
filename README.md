@@ -117,3 +117,8 @@ Memory chip used: https://www.mouser.dk/datasheet/2/1127/APM_PSRAM_QSPI_APS1604M
  * asynchronous circuit in Chisel as Patmos peripheral
  * Some HW Hello World
 
+## Submission
+
+ * Checklist at https://github.com/efabless/caravel_user_project/blob/main/docs/source/index.rst#checklist-for-open-mpw-submission
+   * But the README misses ```make setup```
+ * Patmos frequency setting
