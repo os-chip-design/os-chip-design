@@ -8,6 +8,22 @@ Article on this course: https://www.compute.dtu.dk/english/news/nyhed?id=ed01028
 
 https://docs.google.com/document/d/1B4SUZ5X-Ca8k_reIMNJzn70KjauhOAQU3Uh72D38uhM/edit?usp=sharing
 
+## Building the Chip
+
+When all tools are installed (see below), following steps will build our chip:
+
+```
+git clone git@github.com:os-chip-design/patmos-chip.git
+cd patmos-chip
+make setup
+make user_project_wrapper
+make compress
+# delete gds files (maybe?)
+make precheck
+make run-precheck
+```
+
+
 ## Commands to get Started
 
 Make sure that Python3 is default and in a later version (3.6 or 3.8 for Caravel)
