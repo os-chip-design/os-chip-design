@@ -16,6 +16,13 @@ When all tools are installed (see below), following steps will build our chip:
 git clone git@github.com:os-chip-design/patmos-chip.git
 cd patmos-chip
 make setup
+```
+If needed uncompress files with"
+```
+make uncompress
+```
+and continue
+```
 make user_project_wrapper
 make compress
 # delete gds files (maybe?)
