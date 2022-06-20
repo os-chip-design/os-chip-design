@@ -71,6 +71,16 @@ If detail routing fails on the optimization step without any helpful error messa
 
 If the flow fails due to ROUTING CONGESTION, set a lowervalue of ```PL_TARGET_DENSITY```
 
+
+#### Fixing: Klayout Metal Minimum Clear Area Density
+
+This is done in klayout on the gds after the user_project_wrapper is hardened!
+
+1. Open klayout in edit mode and load the user_project_wrapper.gds 
+2. Delete the contents of ```sky130_fd_sc_hd__decap_12``` (select the cell in Display->Select cell)
+3. Open the sky130_fd_sc_hd library found at ```$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds```
+4. Select the ```sky130_ef_sc_hd__decap_12``` cell and copy the contents and paste into the ```sky130_fd_sc_hd__decap_12``` cell in user_project_wrapper.gds
+
 ### Setup for OpenROAD
 
 Instructions for setting up OpenROAD are found here:
