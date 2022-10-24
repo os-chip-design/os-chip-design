@@ -56,9 +56,9 @@ class HelloMorse(freq: Int) extends Module {
   def toBits(c: Char) = c match {
     case '.' => List(1, 0)
     case '-' => List(1, 1, 1, 0)
-    case ',' => List(0, 0, 0) // one more then spec, for easier hearing on faster pace
+    case ',' => List(0, 0, 0) // one more then in the spec, for easier hearing at a faster pace
     case ' ' => List(0, 0, 0, 0)
-    case _ => println(c); List(123)
+    case _ => println(c); List(123) // should fail
   }
 
   val m = message.map(c => code(c))
@@ -111,6 +111,6 @@ class HelloMorse(freq: Int) extends Module {
 
 object HelloMorse extends App {
   // It is 10 MHz for the chip, but 100 MHz for the Basys 3 board
-  val Basys3 = true
+  val Basys3 = false
   emitVerilog(new HelloMorse(if (Basys3) 100000000 else 10000000))
 }
