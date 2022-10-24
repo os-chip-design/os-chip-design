@@ -2,6 +2,8 @@
 
 This is a special course running at DTU in spring semester 2022.
 
+Article in Engineering newspaper: https://ing.dk/artikel/dtu-studerende-bygger-designer-mikrochip-bunden-261808
+
 Article on this course: https://www.compute.dtu.dk/english/news/nyhed?id=ed010284-154f-43a3-a352-6dce97eaf72c
 
 ## Meeting Notes
